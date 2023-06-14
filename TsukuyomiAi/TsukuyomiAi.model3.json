@@ -1,0 +1,410 @@
+{
+  "Version": 3,
+  "Type": 0,
+  "FileReferences": {
+    "Moc": "TsukuyomiAi.moc3",
+    "Textures": [
+      "TsukuyomiAi.4096/texture_00.png",
+      "TsukuyomiAi.4096/texture_01.png"
+    ],
+    "PhysicsV2": {},
+    "Motions": {
+      "Tap": [
+        {
+          "Name": "Move",
+          "File": "animations/hiyori_m02.motion3.json",
+          "Text": "Hi",
+          "Language": "en"
+        }
+      ]
+    }
+  },
+  "Controllers": {
+    "ParamHit": {},
+    "ParamLoop": {},
+    "KeyTrigger": {},
+    "ParamTrigger": {},
+    "AreaTrigger": {},
+    "HandTrigger": {},
+    "EyeBlink": {
+      "MinInterval": 500,
+      "MaxInterval": 6000,
+      "Enabled": true
+    },
+    "LipSync": {
+      "Gain": 5.0
+    },
+    "MouseTracking": {
+      "SmoothTime": 0.15,
+      "Enabled": true
+    },
+    "AutoBreath": {
+      "Enabled": true
+    },
+    "ExtraMotion": {
+      "Enabled": true
+    },
+    "Accelerometer": {
+      "Enabled": true
+    },
+    "Microphone": {},
+    "Transform": {},
+    "FaceTracking": {
+      "Enabled": true
+    },
+    "HandTracking": {},
+    "ParamValue": {},
+    "PartOpacity": {},
+    "ArtmeshOpacity": {},
+    "ArtmeshColor": {},
+    "ArtmeshCulling": {
+      "DefaultMode": 0
+    },
+    "IntimacySystem": {}
+  },
+  "HitAreas": [
+    {
+      "Name": "ArtMesh",
+      "Id": "ArtMesh",
+      "Motion": "Tap:Move"
+    },
+    {
+      "Name": "ArtMesh2",
+      "Id": "ArtMesh2",
+      "Motion": "Tap:Move"
+    },
+    {
+      "Name": "ArtMesh3",
+      "Id": "ArtMesh3",
+      "Motion": "Tap:Move"
+    },
+    {
+      "Name": "ArtMesh4",
+      "Id": "ArtMesh4",
+      "Motion": "Tap:Move"
+    },
+    {
+      "Name": "ArtMesh5",
+      "Id": "ArtMesh5",
+      "Motion": "Tap:Move"
+    },
+    {
+      "Name": "ArtMesh6",
+      "Id": "ArtMesh6",
+      "Motion": "Tap:Move"
+    },
+    {
+      "Name": "ArtMesh7",
+      "Id": "ArtMesh7"
+    },
+    {
+      "Name": "ArtMesh8",
+      "Id": "ArtMesh8"
+    },
+    {
+      "Name": "ArtMesh9",
+      "Id": "ArtMesh9"
+    },
+    {
+      "Name": "ArtMesh10",
+      "Id": "ArtMesh10"
+    },
+    {
+      "Name": "ArtMesh11",
+      "Id": "ArtMesh11"
+    },
+    {
+      "Name": "ArtMesh12",
+      "Id": "ArtMesh12"
+    },
+    {
+      "Name": "ArtMesh13",
+      "Id": "ArtMesh13"
+    },
+    {
+      "Name": "ArtMesh14",
+      "Id": "ArtMesh14"
+    },
+    {
+      "Name": "ArtMesh15",
+      "Id": "ArtMesh15"
+    },
+    {
+      "Name": "ArtMesh16",
+      "Id": "ArtMesh16"
+    },
+    {
+      "Name": "ArtMesh17",
+      "Id": "ArtMesh17"
+    },
+    {
+      "Name": "ArtMesh18",
+      "Id": "ArtMesh18"
+    },
+    {
+      "Name": "ArtMesh19",
+      "Id": "ArtMesh19"
+    },
+    {
+      "Name": "ArtMesh20",
+      "Id": "ArtMesh20"
+    },
+    {
+      "Name": "ArtMesh21",
+      "Id": "ArtMesh21"
+    },
+    {
+      "Name": "ArtMesh22",
+      "Id": "ArtMesh22"
+    },
+    {
+      "Name": "ArtMesh24",
+      "Id": "ArtMesh24"
+    },
+    {
+      "Name": "ArtMesh25",
+      "Id": "ArtMesh25"
+    },
+    {
+      "Name": "ArtMesh26",
+      "Id": "ArtMesh26"
+    },
+    {
+      "Name": "ArtMesh27",
+      "Id": "ArtMesh27"
+    },
+    {
+      "Name": "ArtMesh28",
+      "Id": "ArtMesh28"
+    },
+    {
+      "Name": "ArtMesh29",
+      "Id": "ArtMesh29"
+    },
+    {
+      "Name": "ArtMesh30",
+      "Id": "ArtMesh30"
+    },
+    {
+      "Name": "ArtMesh31",
+      "Id": "ArtMesh31"
+    },
+    {
+      "Name": "ArtMesh32",
+      "Id": "ArtMesh32"
+    },
+    {
+      "Name": "ArtMesh33",
+      "Id": "ArtMesh33"
+    },
+    {
+      "Name": "ArtMesh34",
+      "Id": "ArtMesh34"
+    },
+    {
+      "Name": "ArtMesh35",
+      "Id": "ArtMesh35"
+    },
+    {
+      "Name": "ArtMesh36",
+      "Id": "ArtMesh36"
+    },
+    {
+      "Name": "ArtMesh37",
+      "Id": "ArtMesh37"
+    },
+    {
+      "Name": "ArtMesh38",
+      "Id": "ArtMesh38"
+    },
+    {
+      "Name": "ArtMesh39",
+      "Id": "ArtMesh39"
+    },
+    {
+      "Name": "ArtMesh40",
+      "Id": "ArtMesh40"
+    },
+    {
+      "Name": "ArtMesh41",
+      "Id": "ArtMesh41"
+    },
+    {
+      "Name": "ArtMesh42",
+      "Id": "ArtMesh42"
+    },
+    {
+      "Name": "ArtMesh43",
+      "Id": "ArtMesh43"
+    },
+    {
+      "Name": "ArtMesh44",
+      "Id": "ArtMesh44"
+    },
+    {
+      "Name": "ArtMesh45",
+      "Id": "ArtMesh45"
+    },
+    {
+      "Name": "ArtMesh46",
+      "Id": "ArtMesh46"
+    },
+    {
+      "Name": "ArtMesh47",
+      "Id": "ArtMesh47"
+    },
+    {
+      "Name": "ArtMesh48",
+      "Id": "ArtMesh48"
+    },
+    {
+      "Name": "ArtMesh49",
+      "Id": "ArtMesh49"
+    },
+    {
+      "Name": "ArtMesh50",
+      "Id": "ArtMesh50"
+    },
+    {
+      "Name": "ArtMesh51",
+      "Id": "ArtMesh51"
+    },
+    {
+      "Name": "ArtMesh52",
+      "Id": "ArtMesh52"
+    },
+    {
+      "Name": "ArtMesh53",
+      "Id": "ArtMesh53"
+    },
+    {
+      "Name": "ArtMesh54",
+      "Id": "ArtMesh54"
+    },
+    {
+      "Name": "ArtMesh55",
+      "Id": "ArtMesh55"
+    },
+    {
+      "Name": "ArtMesh56",
+      "Id": "ArtMesh56"
+    },
+    {
+      "Name": "ArtMesh57",
+      "Id": "ArtMesh57"
+    },
+    {
+      "Name": "ArtMesh58",
+      "Id": "ArtMesh58"
+    },
+    {
+      "Name": "ArtMesh59",
+      "Id": "ArtMesh59"
+    },
+    {
+      "Name": "ArtMesh60",
+      "Id": "ArtMesh60"
+    },
+    {
+      "Name": "ArtMesh61",
+      "Id": "ArtMesh61"
+    },
+    {
+      "Name": "ArtMesh62",
+      "Id": "ArtMesh62"
+    },
+    {
+      "Name": "ArtMesh63",
+      "Id": "ArtMesh63"
+    },
+    {
+      "Name": "ArtMesh64",
+      "Id": "ArtMesh64"
+    },
+    {
+      "Name": "ArtMesh65",
+      "Id": "ArtMesh65"
+    },
+    {
+      "Name": "ArtMesh66",
+      "Id": "ArtMesh66"
+    },
+    {
+      "Name": "D_MOUTH_00",
+      "Id": "D_MOUTH_00"
+    },
+    {
+      "Name": "D_MOUTH_01",
+      "Id": "D_MOUTH_01"
+    },
+    {
+      "Name": "D_MOUTH_02",
+      "Id": "D_MOUTH_02"
+    },
+    {
+      "Name": "D_MOUTH_04",
+      "Id": "D_MOUTH_04"
+    },
+    {
+      "Name": "D_MOUTH_05",
+      "Id": "D_MOUTH_05"
+    },
+    {
+      "Name": "D_NOSE_00",
+      "Id": "D_NOSE_00"
+    },
+    {
+      "Name": "D_PARTS_01_FACE_001_00",
+      "Id": "D_PARTS_01_FACE_001_00"
+    },
+    {
+      "Name": "ArtMesh23",
+      "Id": "ArtMesh23"
+    },
+    {
+      "Name": "ArtMesh67",
+      "Id": "ArtMesh67"
+    },
+    {
+      "Name": "ArtMesh68",
+      "Id": "ArtMesh68"
+    },
+    {
+      "Name": "ArtMesh69",
+      "Id": "ArtMesh69"
+    },
+    {
+      "Name": "ArtMesh70",
+      "Id": "ArtMesh70"
+    },
+    {
+      "Name": "ArtMesh71",
+      "Id": "ArtMesh71"
+    },
+    {
+      "Name": "ArtMesh72",
+      "Id": "ArtMesh72"
+    },
+    {
+      "Name": "ArtMesh73",
+      "Id": "ArtMesh73"
+    },
+    {
+      "Name": "ArtMesh74",
+      "Id": "ArtMesh74"
+    },
+    {
+      "Name": "ArtMesh75",
+      "Id": "ArtMesh75"
+    },
+    {
+      "Name": "ArtMesh76",
+      "Id": "ArtMesh76"
+    },
+    {
+      "Name": "D_PARTS_01_FACE_001_06",
+      "Id": "D_PARTS_01_FACE_001_06"
+    }
+  ],
+  "Options": {}
+}
