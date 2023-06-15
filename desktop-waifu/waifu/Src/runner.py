@@ -121,19 +121,18 @@ while True:
     print("You" + Fore.GREEN + Style.BRIGHT + " (mic) " + Fore.RESET + ">", end="", flush=True)
 
     # Wait for audio input
-    # utils.hotkeys.audio_input_await()
+    utils.hotkeys.audio_input_await()
 
-    # print("\rYou" + Fore.GREEN + Style.BRIGHT + " (mic " + Fore.YELLOW + "[Recording]" + Fore.GREEN +") " + Fore.RESET + ">", end="", flush=True)
+    print("\rYou" + Fore.GREEN + Style.BRIGHT + " (mic " + Fore.YELLOW + "[Recording]" + Fore.GREEN +") " + Fore.RESET + ">", end="", flush=True)
 
-    # audio_buffer = utils.audio.record()
+    audio_buffer = utils.audio.record()
 
     # We need to keep track of the length of this message
     # because in Python we have no way to clear an entire line, wtf.
     try:
-        # tanscribing_log = "\rYou" + Fore.GREEN + Style.BRIGHT + " (mic " + Fore.BLUE + "[Transcribing (" + str(humanize.naturalsize(os.path.getsize(audio_buffer))) + ")]" + Fore.GREEN +") " + Fore.RESET + "> "
-        # print(tanscribing_log, end="", flush=True)
-        # transcript = utils.transcriber.transcribe(audio_buffer)
-        transcript = utils.transcriber.manual()
+        tanscribing_log = "\rYou" + Fore.GREEN + Style.BRIGHT + " (mic " + Fore.BLUE + "[Transcribing (" + str(humanize.naturalsize(os.path.getsize(audio_buffer))) + ")]" + Fore.GREEN +") " + Fore.RESET + "> "
+        print(tanscribing_log, end="", flush=True)
+        transcript = utils.transcriber.transcribe(audio_buffer)
     except Exception as e:
         print(Fore.RED + Style.BRIGHT + "Error: " + str(e))
         continue

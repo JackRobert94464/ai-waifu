@@ -7,7 +7,7 @@ VOICEVOX_URL = os.environ.get("VOICEVOX_URL")
 
 VOICEVOX_LOCAL_FILE = "test.wav"
 def transcribe(filename):
-    # audio = open(filename, "rb")
+    audio = open(filename, "rb")
 
     # transcript = openai.Audio.transcribe("whisper-1", audio)
 
@@ -19,13 +19,6 @@ def transcribe(filename):
     
     return message
 
-def manual():
-    message = input("Enter message: ")
-
-    if message is None or len(message.strip()) == 0:
-        return None
-    
-    return message
 
 def speak_jp(text, speaker=1):
     global VOICEVOX_URL, VOICEVOX_LOCAL_FILE

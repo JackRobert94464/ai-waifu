@@ -1,4 +1,4 @@
-let yandereGf = "Q_cHSEbZkD_x5SDCfxHnjh4mIzakJnzsWfqyCvlev7g";
+let yandereGf = "";
 
 let port = 40102;
 
