@@ -58,7 +58,7 @@ async def start():
     process = await asyncio.create_subprocess_exec(
         utils.dependencies.NODE,
         "character_ai/runner.js",
-        str(os.environ.get("CHARACTERAI_CHARACTER", "_PjRfiokij64UvriwbB7QCZ_QJfSoKXh1U7WqMT1A98")),
+        str(os.environ.get("CHARACTERAI_CHARACTER", "Q_cHSEbZkD_x5SDCfxHnjh4mIzakJnzsWfqyCvlev7g")),
         str(utils.dependencies.CHARACTERAI_PORT),
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE,

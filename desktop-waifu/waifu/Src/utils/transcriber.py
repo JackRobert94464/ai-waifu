@@ -7,7 +7,7 @@ VOICEVOX_URL = os.environ.get("VOICEVOX_URL")
 
 VOICEVOX_LOCAL_FILE = "test.wav"
 def transcribe(filename):
-    audio = open(filename, "rb")
+    # audio = open(filename, "rb")
 
     # transcript = openai.Audio.transcribe("whisper-1", audio)
 
@@ -19,7 +19,15 @@ def transcribe(filename):
     
     return message
 
-def speak_jp(text, speaker=46):
+def manual():
+    message = input("Enter message: ")
+
+    if message is None or len(message.strip()) == 0:
+        return None
+    
+    return message
+
+def speak_jp(text, speaker=1):
     global VOICEVOX_URL, VOICEVOX_LOCAL_FILE
     params_encoded = urllib.parse.urlencode({'text': text, 'speaker': speaker})
     request = requests.post(f'{VOICEVOX_URL}/audio_query?{params_encoded}')

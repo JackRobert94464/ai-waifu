@@ -1,4 +1,4 @@
-let yandereGf = "";
+let yandereGf = "Q_cHSEbZkD_x5SDCfxHnjh4mIzakJnzsWfqyCvlev7g";
 
 let port = 40102;
 
@@ -49,7 +49,7 @@ wss.on('connection', (ws) => {
 
 async function main() {
     console.log(`Authenticating....`);
-    await client.authenticateAsGuest();
+    await client.authenticateWithToken("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkVqYmxXUlVCWERJX0dDOTJCa2N1YyJ9.eyJpc3MiOiJodHRwczovL2NoYXJhY3Rlci1haS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDQ4MDA1NzgwNTY2MDM3MDg4MzciLCJhdWQiOlsiaHR0cHM6Ly9hdXRoMC5jaGFyYWN0ZXIuYWkvIiwiaHR0cHM6Ly9jaGFyYWN0ZXItYWkudXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY4NDQ4MjYyMSwiZXhwIjoxNjg3MDc0NjIxLCJhenAiOiJkeUQzZ0UyODFNcWdJU0c3RnVJWFloTDJXRWtucVp6diIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ.jMeGjkC3Ar-xrPpTkJVpLP08RFhXCJhvAHR2-x6GUBZQNnllHFCEen5prpbF6WbUUXU0mtcocjzl3m-sd8w_49BAsSkD7jTa64vAYPvwTPX6nlJKpGekDry2RCClpcyjwkgzUTzFgEhM9hoCvIHHBL0OdKW8QKMa3XM1VMAN-OU7UoVqlqW0tfKXI16HJDCAkCh_SjyKkhaLFlmMU-IyiLES1OdXekP-kafBlBt9gc_qPK82QjkECNTqCVqDwz9tUExR3EVyar5q8y6Wl4V13mO8a6W5E8PvksheiL018Sw5j43Rnfz5tBOoGxEUzmJQChBghkcyKjZs6bFjcICqRQ");
 
     console.log(`Authenticated, fetching character AI info....`);
 
