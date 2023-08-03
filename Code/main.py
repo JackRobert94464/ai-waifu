@@ -14,17 +14,51 @@ import asyncio
 # We wont be using Vtube Studio or whatever but Live2DViewerEX instead
 # yawn im sleepy and i dont know what to do
 
+def initVar():
+# For the time being, we will use character AI
+# in the future i hope to integrate our own self hosted llm
+    return
 
+def textToSpeech():
+    return
+
+def characterReply():
+    return
+
+def translate():
+    return
+
+# Accept input from user keyboard in python
+def textInput():
+    text = input("Enter something: ")
+    return text
+
+def microphoneInput():
+    return
+
+def processingInput():
+    # Accept input from user keyboard in python
+    input = textInput()
+
+    # Accept input from user microphone in python
+
+    # Sanitizing input
+
+    return input
 
 # Main function. Will have to be isolated later
 
 async def main():
-    async with Client() as client:
-        audio_query = await client.create_audio_query(
-            "こんにちは！", speaker=1
-        )
-        with open("voice.wav", "wb") as f:
-            f.write(await audio_query.synthesis(speaker=1))
+    # Initialize environment variables
+    initVar()
+
+    while True:
+        print("Running...")
+        input = processingInput()
+        print(input)
+        if input == "exit":
+            break
+        
 
 
 if __name__ == "__main__":
