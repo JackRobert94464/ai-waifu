@@ -23,6 +23,7 @@ def textToSpeech():
     return
 
 def characterReply():
+    
     return
 
 def translate():
@@ -58,7 +59,7 @@ async def main():
         print(input)
         if input == "exit":
             break
-        
+
 
 
 if __name__ == "__main__":
