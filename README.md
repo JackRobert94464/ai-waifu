@@ -6,7 +6,8 @@
 - pipenv
 
 ## Current State
-- rewriting runner.js for node_characterAI
+- rewriting runner.js for node_characterAI (done!)
+- connect python driver code with node.js server
 
 ## Tasks
 - make a keyboard chatbot using API (from characterAIpuppeteer/localrun)
@@ -18,6 +19,7 @@
 - clean the code
 
 ## Future Expectations
+- rewriting runner.js to allow image recognition (already implemented in the node module)
 - make it sing
 - make it a discord bot
 - allow for input from other AI models (for commentary during actions)
