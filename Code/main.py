@@ -66,7 +66,8 @@ def venvCheck():
         # Not in a virtual environment
         print(Colour.RED + 'You are not in a virtual environment' + Colour.END)
 
-
+# Run nodejs server
+characterAI.run_async()
 
 # Main function. Will have to be isolated later
 
@@ -77,8 +78,7 @@ async def main():
     # Check if user is in virtual environment
     venvCheck()
 
-    # Run nodejs server
-    await characterAI.run_node_server()
+    
 
     # Run websocket client
     print("Running...")
@@ -90,17 +90,11 @@ async def main():
             input = processingInput()
             print("You: " + input)
 
-            # Create a characterAI client and connect it to the nodejs server
-            client = characterAI.Client("ws://localhost:40034")
-
             # Send the input to the nodejs server via WebSocket
-            client.send(input)
-
-            # Receive the response from the nodejs server via WebSocket
-            response = client.recv()
+            characterAI.send_message_to_process_via_websocket(input)
 
             # Print or use the response in your Python code
-            print("Character: " + response)
+            print("Character: " + characterAI.response)
 
         except Exception as e:
             print(Colour.RED + "Error: " + str(e) + Colour.END)

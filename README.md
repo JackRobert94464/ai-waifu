@@ -7,7 +7,7 @@
 
 ## Current State
 - rewriting runner.js for node_characterAI (done!)
-- connect python driver code with node.js server
+- connect python driver code with node.js server man im stuck
 
 ## Tasks
 - make a keyboard chatbot using API (from characterAIpuppeteer/localrun)
