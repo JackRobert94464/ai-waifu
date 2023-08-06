@@ -13,6 +13,7 @@ import asyncio
 import os
 import sys
 from pycolour import Colour
+import threading
 
 # Import local modules
 import characterAI
@@ -69,6 +70,8 @@ def venvCheck():
 # Run nodejs server
 characterAI.run_async()
 
+semaphore = threading.Semaphore(0)
+
 # Main function. Will have to be isolated later
 
 async def main():
@@ -86,19 +89,21 @@ async def main():
     while True:
 
         # Yeet input to nodejs server
-        try:
-            input = processingInput()
-            print("You: " + input)
+        # try:
+        text = processingInput()
+        print("You: ")
 
-            # Send the input to the nodejs server via WebSocket
-            characterAI.send_message_to_process_via_websocket(input)
+        # Send the input to the nodejs server via WebSocket
+        characterAI.send_message_to_process_via_websocket(text)
+        semaphore.acquire()
 
-            # Print or use the response in your Python code
-            print("Character: " + characterAI.response)
+        # Print or use the response in your Python code
+        print("Character: " + characterAI.response)
+        semaphore.release()
 
-        except Exception as e:
-            print(Colour.RED + "Error: " + str(e) + Colour.END)
-            continue
+        # except Exception as e:
+            # print(Colour.RED + "Error: " + str(e) + Colour.END)
+            # continue
 
         # Receive output from nodejs server
         
