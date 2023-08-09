@@ -15,6 +15,8 @@ import sys
 from pycolour import Colour
 import threading
 
+from rich.console import Console
+
 # Import local modules
 import characterAI
 
@@ -39,7 +41,7 @@ def translate():
 
 # Accept input from user keyboard in python
 def textInput():
-    text = input("Enter something: ")
+    text = input()
     return text
 
 def microphoneInput():
@@ -47,13 +49,13 @@ def microphoneInput():
 
 def processingInput():
     # Accept input from user keyboard in python
-    input = textInput()
+    user_input = textInput()
 
     # Accept input from user microphone in python
 
     # Sanitizing input
 
-    return input
+    return user_input 
 
 def venvCheck():
     if os.environ.get('VIRTUAL_ENV'):
@@ -81,8 +83,6 @@ async def main():
     # Check if user is in virtual environment
     venvCheck()
 
-    
-
     # Run websocket client
     print("Running...")
 
@@ -90,16 +90,14 @@ async def main():
 
         # Yeet input to nodejs server
         # try:
-        text = processingInput()
         print("You: ")
-
+        text = processingInput()
+        
         # Send the input to the nodejs server via WebSocket
         characterAI.send_message_to_process_via_websocket(text)
-        semaphore.acquire()
 
         # Print or use the response in your Python code
         print("Character: " + characterAI.response)
-        semaphore.release()
 
         # except Exception as e:
             # print(Colour.RED + "Error: " + str(e) + Colour.END)
@@ -107,7 +105,7 @@ async def main():
 
         # Receive output from nodejs server
         
-        if input == "exit":
+        if text == "exit":
             break
 
 if __name__ == "__main__":
