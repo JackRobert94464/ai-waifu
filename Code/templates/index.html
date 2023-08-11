@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <title>Web GUI</title>
+</head>
+<body>
+    <input type="text" id="message-input" placeholder="Type your message...">
+    <button id="send-button">Send</button>
+    <div id="chat-box"></div>
+    <script>
+        const socket = io(); // Establish WebSocket connection
+
+        document.querySelector('#send-button').addEventListener('click', () => {
+            const message = document.querySelector('#message-input').value;
+            socket.emit('user_message', message); // Send user message to Python backend
+        });
+
+        socket.on('character_response', response => {
+            const chatBox = document.querySelector('#chat-box');
+            chatBox.innerHTML += `<div>Character: ${response}</div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        });
+    </script>
+</body>
+</html>

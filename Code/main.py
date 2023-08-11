@@ -19,6 +19,7 @@ from rich.console import Console
 
 # Import local modules
 import characterAI
+import flask_webGUI
 
 # We wont be using Vtube Studio or whatever but Live2DViewerEX instead
 # yawn im sleepy and i dont know what to do
@@ -111,4 +112,9 @@ async def main():
             break
 
 if __name__ == "__main__":
-    asyncio.run(main())
+
+    flask_webGUI.run_flask_server()  # Run Flask server in the main thread
+
+    # Create a separate thread for your main function
+    main_thread = threading.Thread(target=asyncio.run, args=(main(),))
+    main_thread.start()
