@@ -27,6 +27,8 @@ import characterAI
 def initVar():
 # For the time being, we will use character AI
 # in the future i hope to integrate our own self hosted llm
+# for idea: here a repo i found on a vietnamese llm
+# 
     return
 
 def textToSpeech():
