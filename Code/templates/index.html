@@ -3,25 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <title>Web GUI</title>
 </head>
 <body>
-    <input type="text" id="message-input" placeholder="Type your message...">
-    <button id="send-button">Send</button>
-    <div id="chat-box"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1>Chatroom</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <input type="text" id="message-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div id="chat-box" class="chat-box">
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         const socket = io(); // Establish WebSocket connection
 
         document.querySelector('#send-button').addEventListener('click', () => {
             const message = document.querySelector('#message-input').value;
             socket.emit('user_message', message); // Send user message to Python backend
+
+            const chatBox = document.querySelector('#chat-box');
+            chatBox.innerHTML += `<div class="chat-message">
+                <div class="chat-message-user">You:</div>
+                <div class="chat-message-text">${message}</div>
+            </div>`;
         });
 
         socket.on('character_response', response => {
             const chatBox = document.querySelector('#chat-box');
-            chatBox.innerHTML += `<div>Character: ${response}</div>`;
+            chatBox.innerHTML += `<div class="chat-message">
+                <div class="chat-message-user">Character:</div>
+                <div class="chat-message-text">${response}</div>
+            </div>`;
             chatBox.scrollTop = chatBox.scrollHeight;
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set the background color of the chatroom to blue
+            document.body.style.backgroundColor = '#0069c0';
+
+            // Add a dark blue border to the chat box
+            document.querySelector('#chat-box').style.borderColor = '#004d8c';
         });
     </script>
 </body>

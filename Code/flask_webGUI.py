@@ -2,6 +2,9 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO
 import characterAI
 
+global app
+global socketio
+
 app = Flask(__name__)
 socketio = SocketIO(app)
 
@@ -12,6 +15,12 @@ def index():
 @socketio.on('user_message')
 def handle_user_message(message):
     characterAI.send_message_to_process_via_websocket(message)
+
+@socketio.on('character_response')
+def handle_character_response(response):
+    response = characterAI.reply_callback
+    print('alabama:' + response)
+    
 
 @socketio.on('connect')
 def test_connect():

@@ -18,7 +18,7 @@ import atexit
 # Close the event loop
 # loop.close()
 
-
+import flask_webGUI
 
 
 
@@ -31,14 +31,16 @@ import atexit
 
 # Declare a global WebSocket object
 wsapp = None
-response = None
+reply_callback = None
 
 # Declare a global event object
 ws_event = threading.Event()
 
 def on_message(wsapp, message):
-    print(message)
-    response(message)
+    # send the message to the flask_webGUI server
+    flask_webGUI.socketio.emit('character_response', message)
+    
+    reply_callback = message
 
 def on_close(wsapp):
     print("### websocket closed ###")
@@ -71,6 +73,7 @@ async def handle_output(stream, suffix):
         if not line:
             break
         print(f"node js: {line.decode().rstrip()}")
+
 
 
 async def run_node_server():

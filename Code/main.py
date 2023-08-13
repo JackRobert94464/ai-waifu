@@ -89,18 +89,18 @@ async def main():
     # Run websocket client
     print("Running...")
 
-    while True:
+    # while True:
 
         # Yeet input to nodejs server
         # try:
-        print("You: ")
-        text = processingInput()
+        # print("You: ")
+        # text = processingInput()
         
         # Send the input to the nodejs server via WebSocket
-        characterAI.send_message_to_process_via_websocket(text)
+        # characterAI.send_message_to_process_via_websocket(text)
 
         # Print or use the response in your Python code
-        print("Character: " + characterAI.response)
+        # print("Character: " + characterAI.response)
 
         # except Exception as e:
             # print(Colour.RED + "Error: " + str(e) + Colour.END)
@@ -108,8 +108,8 @@ async def main():
 
         # Receive output from nodejs server
         
-        if text == "exit":
-            break
+        # if text == "exit":
+        #    break
 
 if __name__ == "__main__":
 
