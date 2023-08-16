@@ -2,6 +2,12 @@ body{
     background-color: #f4f7f6;
     margin-top:20px;
 }
+
+.btn-without-border { 
+    border: none; 
+    outline: none; 
+} 
+
 .card {
     background: #fff;
     transition: .5s;
@@ -91,6 +97,18 @@ body{
 .chat .chat-history {
     padding: 20px;
     border-bottom: 2px solid #fff
+}
+
+#nav {
+    width: 100%;
+    height: 40em;
+    line-height: 2em;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .chat .chat-history ul {

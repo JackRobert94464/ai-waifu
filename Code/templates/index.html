@@ -1,62 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
-    <title>Web GUI</title>
+<meta charset="utf-8">
+
+
+<title>WebGUI Chatroom</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../static/styles.css" rel="stylesheet"> <!-- Link to your CSS file -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script>src="../static/script.js"</script>
+
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <h1>Chatroom</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <input type="text" id="message-input" placeholder="Type your message...">
-                <button id="send-button">Send</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div id="chat-box" class="chat-box">
-                </div>
-            </div>
-        </div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="container">
+<div class="row clearfix">
+<div class="col-lg-12">
+<div class="card chat-app">
+<div id="plist" class="people-list">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text"><i class="fa fa-search"></i></span>
+</div>
+<input type="text" class="form-control" placeholder="Search...">
+</div>
+<ul class="list-unstyled chat-list mt-2 mb-0">
+<li class="clearfix">
+<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+<div class="about">
+<div class="name">Vincent Porter</div>
+<div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>
+</div>
+</li>
+<li class="clearfix active">
+<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+<div class="about">
+<div class="name">Aiden Chavez</div>
+<div class="status"> <i class="fa fa-circle online"></i> online </div>
+</div>
+</li>
+<li class="clearfix">
+<img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+<div class="about">
+<div class="name">Mike Thomas</div>
+<div class="status"> <i class="fa fa-circle online"></i> online </div>
+</div>
+</li>
+<li class="clearfix">
+<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+<div class="about">
+<div class="name">Christian Kelly</div>
+<div class="status"> <i class="fa fa-circle offline"></i> left 10 hours ago </div>
+</div>
+</li>
+<li class="clearfix">
+<img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+<div class="about">
+<div class="name">Monica Ward</div>
+<div class="status"> <i class="fa fa-circle online"></i> online </div>
+</div>
+</li>
+<li class="clearfix">
+<img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+<div class="about">
+<div class="name">Dean Henry</div>
+<div class="status"> <i class="fa fa-circle offline"></i> offline since Oct 28 </div>
+</div>
+</li>
+</ul>
+</div>
+<div class="chat">
+<div class="chat-header clearfix">
+<div class="row">
+<div class="col-lg-6">
+<a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+<img src="https://characterai.io/i/80/static/avatars/uploaded/2022/10/6/vZR9wozC4cD57mv9ChzynE8VAj9SiMoDQr9aqqABsgY.webp" alt="avatar">
+</a>
+<div class="chat-about">
+<h6 class="m-b-0">Illya</h6>
+<small>Last seen: 2 hours ago</small>
+</div>
+</div>
+<div class="col-lg-6 hidden-sm text-right">
+<a href="javascript:void(0);" class="btn btn-outline-secondary"><i class="fa fa-camera"></i></a>
+<a href="javascript:void(0);" class="btn btn-outline-primary"><i class="fa fa-image"></i></a>
+<a href="javascript:void(0);" class="btn btn-outline-info"><i class="fa fa-cogs"></i></a>
+<a href="javascript:void(0);" class="btn btn-outline-warning"><i class="fa fa-question"></i></a>
+</div>
+</div>
+</div>
+<div class="chat-history">
+    <ul class="innerbox" id="nav">
+    </ul>
     </div>
-    <script>
-        const socket = io(); // Establish WebSocket connection
 
-        document.querySelector('#send-button').addEventListener('click', () => {
-            const message = document.querySelector('#message-input').value;
-            socket.emit('user_message', message); // Send user message to Python backend
+        <div class="chat-message clearfix">
+            <div class="input-group mb-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><button id="send-button" class="btn-without-border"><i class="fa fa-send"></i></button></span>
+                </div>
+                <input type="text" class="form-control" id="message-input" placeholder="Type your message...">
+            </div>
+        </div>
 
-            const chatBox = document.querySelector('#chat-box');
-            chatBox.innerHTML += `<div class="chat-message">
-                <div class="chat-message-user">You:</div>
-                <div class="chat-message-text">${message}</div>
-            </div>`;
-        });
-
-        socket.on('character_response', response => {
-            const chatBox = document.querySelector('#chat-box');
-            chatBox.innerHTML += `<div class="chat-message">
-                <div class="chat-message-user">Character:</div>
-                <div class="chat-message-text">${response}</div>
-            </div>`;
-            chatBox.scrollTop = chatBox.scrollHeight;
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set the background color of the chatroom to blue
-            document.body.style.backgroundColor = '#0069c0';
-
-            // Add a dark blue border to the chat box
-            document.querySelector('#chat-box').style.borderColor = '#004d8c';
-        });
-    </script>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<script src="../static/script.js"></script>
 </body>
 </html>

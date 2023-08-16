@@ -1,27 +1,36 @@
-const chatBox = document.getElementById('chat-box');
-const messageInput = document.getElementById('message-input');
-const sendButton = document.getElementById('send-button');
-const socket = io();  // Establish WebSocket connection
+const socket = io(); // Establish WebSocket connection
 
-sendButton.addEventListener('click', () => {
-    const message = messageInput.value;
-    if (message.trim() !== '') {
-        const newMessage = document.createElement('div');
-        newMessage.classList.add('message');
-        newMessage.innerText = message;
-        chatBox.appendChild(newMessage);
-        messageInput.value = '';
-        chatBox.scrollTop = chatBox.scrollHeight;
+document.querySelector('#send-button').addEventListener('click', () => {
+    const message = document.querySelector('#message-input').value;
+    const time = new Date().toLocaleTimeString('en-GB', { hour: "numeric", minute: "numeric"});
+    socket.emit('user_message', message); // Send user message to Python backend
 
-        // Send the message to the Flask backend via WebSocket
-        socket.emit('user_message', message);
-    }
+    const chatBox = document.querySelector('ul.innerbox');
+    chatBox.innerHTML += `<li class="clearfix">
+    <div class="message-data text-right">
+    <span class="message-data-time">${time}</span>
+    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+    </div>
+    <div class="message other-message float-right">${message}</div>
+    </li>`;
 });
 
 socket.on('character_response', response => {
-    const newMessage = document.createElement('div');
-    newMessage.classList.add('message', 'character');
-    newMessage.innerText = `Character: ${response}`;
-    chatBox.appendChild(newMessage);
+    const chatBox = document.querySelector('ul.innerbox');
+    const time = new Date().toLocaleTimeString('en-GB', { hour: "numeric", minute: "numeric"});
+    chatBox.innerHTML += `<li class="clearfix">
+    <div class="message-data">
+    <span class="message-data-time">${time}</span>
+    </div>
+    <div class="message my-message">${response}</div>
+    </li>`;
     chatBox.scrollTop = chatBox.scrollHeight;
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Set the background color of the chatroom to blue
+    document.body.style.backgroundColor = '#0069c0';
+
+    // Add a dark blue border to the chat box
+    document.querySelector('#chat-box').style.borderColor = '#004d8c';
 });
