@@ -1,0 +1,17 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "TsukuyomiAi.moc3",
+		"Textures": [
+			"TsukuyomiAi.4096/texture_00.png",
+			"TsukuyomiAi.4096/texture_01.png"
+		]
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

@@ -34,3 +34,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add a dark blue border to the chat box
     document.querySelector('#chat-box').style.borderColor = '#004d8c';
 });
+
+

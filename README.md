@@ -10,7 +10,13 @@
 - connect python driver code with node.js server man im stuck (done!)
 - make it work with the node.js server (done!)
 - Creating the first WebGUI (done!)
-- Improving the WebGUI
+- Improving the WebGUI (done - now with scrolling history chatbox!)
+- Adding pixi.js live2d module (done - with Tsukuyomi as sample live2d model!)
+- Adding a TTS 
+- Lipsyncing the TTS with pixi-live2d
+
+## Bugs
+- nodejs server double start causing error in log
 
 ## Tasks
 - make a keyboard chatbot using API (from characterAIpuppeteer/localrun)

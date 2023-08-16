@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "node_characterai": "^1.1.8",
+    "pixi-live2d-display": "^0.4.0",
     "pixi.js": "^7.2.4"
   }
 }

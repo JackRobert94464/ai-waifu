@@ -1,0 +1,34 @@
+キー入力によるパラメータを動かす差分の変更
+cc_Tohoku_kiritann.cfg内の''で囲まれた英数字(PARAM_○○○)を書き換えると変更できます
+
+PARAM_pupil1　ハート目
+PARAM_pupil2　しいたけ目
+PARAM_pupil1とPARAM_pupil2の二つをONにするとぐるぐる目になります
+
+PARAM_pupil3　目玉細く
+PARAM_pupil4　目玉小さく
+PARAM_pupil3とPARAM_pupil4の二つをONにすると目玉が上を向きます
+PARAM_pupil5 ハイライト消し
+PARAM_darkcircles1　目のくまができます
+
+PARAM_complexion1　頬染
+PARAM_complexion2　顔影
+PARAM_complexion3　青ざめ
+
+PARAM_emotion1　ジト目
+PARAM_emotion2　目を細める
+PARAM_emotion1とPARAM_emotion2二つをONにすると目を閉じます
+
+PARAM_Glasses1　メガネ
+PARAM_sunglasses1 サングラス
+PARAM_sweat1　汗
+PARAM_Tear1　涙
+PARAM_hair1　包丁ONOFF
+PARAM_aaaa 体を傾けると頬染したり青ざめするのをONOFFします
+
+2019/2/13追加
+PARAM_bbbb　きりたん砲
+PARAM_schoolbag　ランドセル
+PARAM_hair2 ツインテOFF
+PARAM_hair3　ボブカット
+PARAM_hair4　セミロング
