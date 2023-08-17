@@ -1,0 +1,7 @@
+__pycache__
+*.pt
+*.pth
+tmp/*
+eddi_data/messages.json
+config.json
+output.wav
