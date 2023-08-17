@@ -2,4 +2,4 @@
 Tools
 Code\static\Models
 node_modules
-Code\ai-waifu\Lib
+Code\ai-waifu\Lib\*
