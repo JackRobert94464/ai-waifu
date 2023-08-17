@@ -1,5 +1,7 @@
+const cubism2Model =
+  "https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/shizuku/shizuku.model.json";
 const cubism4Model =
-  "/static/Models/Live2D/Tohoku_kiritann/model0.model.json";
+  "https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/haru/haru_greeter_t03.model3.json";
 
 const live2d = PIXI.live2d;
 
@@ -7,12 +9,12 @@ const live2d = PIXI.live2d;
   const app = new PIXI.Application({
     view: document.getElementById("canvas"),
     autoStart: true,
-    width: 250,
-    height: 700,
+    resizeTo: window,
     backgroundColor: 0x333333
   });
 
   const models = await Promise.all([
+    live2d.Live2DModel.from(cubism2Model),
     live2d.Live2DModel.from(cubism4Model)
   ]);
 
@@ -32,27 +34,44 @@ const live2d = PIXI.live2d;
     addHitAreaFrames(model);
   });
 
-  const model4 = models[0];
+  const model2 = models[0];
+  const model4 = models[1];
+
+  model2.x = (innerWidth - model2.width - model4.width) / 2;
+  model4.x = model2.x + model2.width;
 
   // handle tapping
 
   model2.on("hit", (hitAreas) => {
     if (hitAreas.includes("body")) {
       model2.motion("tap_body");
+
+      var audio_link = "https://cdn.jsdelivr.net/gh/RaSan147/pixi-live2d-display@v1.0.3/playground/test.mp3"; // [relative or full url path] [mp3 or wav file]
+
+      var volume = 1; // [Optional arg, can be null or empty] [0.0 - 1.0]
+      
+      model_proxy.speak(audio_link, volume);
     }
 
     if (hitAreas.includes("head")) {
       model2.expression();
     }
   });
-
+  
   model4.on("hit", (hitAreas) => {
     if (hitAreas.includes("Body")) {
       model4.motion("Tap");
+      
+      var audio_link = "https://cdn.jsdelivr.net/gh/RaSan147/pixi-live2d-display@v1.0.3/playground/test.mp3"; // [relative or full url path] [mp3 or wav file]
+
+      var volume = 1; // [Optional arg, can be null or empty] [0.0 - 1.0]
+      
+      model_proxy.speak(audio_link, volume);
     }
 
     if (hitAreas.includes("Head")) {
       model4.expression();
+      model_proxy.speak(audio_link, volume);
     }
   });
 })();
